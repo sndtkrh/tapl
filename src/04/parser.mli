@@ -1,2 +1,2 @@
 exception ParseError
-val exp : Lexer.t list -> Untyped.t * (Lexer.t list)
+val parse : Lexer.t list -> Untyped.t
