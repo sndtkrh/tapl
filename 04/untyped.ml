@@ -48,6 +48,13 @@ let rec eval1 = function
      let t1' = eval1 t1 in TmIsZero(fi, t1')
   | _ -> raise NoRuleApplies
 
+let rec evalall t =
+  if isval t
+  then t
+  else
+    let t' = eval1 t in
+    evalall t'
+
 let rec toString = function
     TmTrue _ -> "true"
   | TmFalse _ -> "false"
@@ -58,8 +65,10 @@ let rec toString = function
   | TmPred (_, t0) -> "pred " ^ (toString t0)
   | TmIsZero (_, t0) -> "iszero " ^ (toString t0)
 
+                      (*
 let main =
   let t = TmIf ("", TmTrue "", TmFalse "", TmTrue "") in
   let t' = eval1 t in
   Printf.printf "%s\n" (toString t);
   Printf.printf "%s\n" (toString t')
+                       *)
