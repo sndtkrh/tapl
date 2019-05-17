@@ -1,2 +1,7 @@
 _build
-a.out
+
+lambda-untyped*
+
+.omakedb
+.omakedb.lock
+*.omc

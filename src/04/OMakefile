@@ -1,0 +1,18 @@
+USE_OCAMLFIND = true
+OCAMLPACKS[] =
+  str
+
+FILES[] =
+  untyped
+  lexer
+  parser
+  main
+
+PROGRAM = lambda-untyped
+
+# OCAML_LIBS +=
+# OCAML_CLIBS +=
+# OCAML_OTHER_LIBS +=
+# OCAML_LIB_FLAGS +=
+
+.DEFAULT: $(OCamlProgram $(PROGRAM), $(FILES))
