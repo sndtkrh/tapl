@@ -10,10 +10,8 @@ build: [
   [omake "PREFIX=%{prefix}%" ]
 ]
 install: [
-  [omake "install" "PREFIX=%{prefix}%" ]
 ]
 remove: [
-  [omake "uninstall" "PREFIX=%{prefix}%" ]
 ]
 depends: [
   "ocaml" {>= "4.06.0"}
