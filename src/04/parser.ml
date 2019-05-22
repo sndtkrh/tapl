@@ -25,10 +25,10 @@ let rec expression = function
 and ifthenelse tokenlist =
   let (t0, tokenlist0) = expression tokenlist in
   let tokenThen = List.hd tokenlist0 in
-  if tokenThen <> Then then raise ParseError;
+  if tokenThen <> Lexer.Then then raise ParseError;
   let (t1, tokenlist1) = expression (List.tl tokenlist0) in
   let tokenElse = List.hd tokenlist1 in
-  if tokenElse <> Else then raise ParseError;
+  if tokenElse <> Lexer.Else then raise ParseError;
   let (t2, tokenlist2) = expression (List.tl tokenlist1) in
   (Untyped.TmIf (t0, t1, t2), tokenlist2)
   
